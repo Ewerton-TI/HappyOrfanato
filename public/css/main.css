@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;/*Faz o calculo com o CSS pegando apartir das bordar da caixa*/
+}
+body {
+  height: 100vh;
+  color: white;
+  background: #EBF2F5;
+}
+:root {
+  font-size: 62.5%;
+}
+
+body,
+input,
+button,
+textarea {
+  /*font-size: 18px;
+    font-family: 'Nunito', sans-serif;*/
+
+  font: 400 1.8rem/1 "Nunito", sans-serif;
+}
