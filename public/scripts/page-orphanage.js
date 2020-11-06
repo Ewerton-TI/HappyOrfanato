@@ -6,15 +6,19 @@ const options = {
     zoomControl: false,
 }   
 
+//get values from html
+const lat = document.querySelector('span[data-lat').dataset.lat
+const lng = document.querySelector('span[data-lng]').dataset.lng
+
 //Create Map
-const mymap = L.map('mapid', options).setView([-23.5219783,-46.4139637], 15);
+const mymap = L.map('mapid', options).setView([lat,lng], 15);
 
 // create and add tileLayer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
 
 //create icon
 const icon = L.icon({
-    iconUrl: "./public/images/map-marker.svg",
+    iconUrl: "/images/map-marker.svg",
     iconSize:[58,68],
     iconAnchor: [29,72],
     popupAnchor: [178, 5]
@@ -26,10 +30,10 @@ const popup = L.popup({m
     className: 'map-popup',
     minWidth: 240,
     minHeight: 240
-}).setContent('Lar das meninas <a href="orphanage.html?id=1" class="choose-orphanage"> <img src="./public/images/arrow-white.svg"> </a>')
+}).setContent('Lar das meninas <a href="/orphanage?id=1" class="choose-orphanage"> <img src="/images/arrow-white.svg"> </a>')
 */
 //Create and add marker
-L.marker([-23.5219783,-46.4139637], {icon} )
+L.marker([lat, lng], {icon} )
     .addTo(mymap)
     /*.bindPopup(popup)*/
 
